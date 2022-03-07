@@ -1,0 +1,7 @@
+= Unzip App
+
+Start the program with (from a jar file) the command above:
+
+java -jar unzipTest.jar [source_txt_dir] [source_zip_cir] [target_dir]
+
+Create also: unzip_error.log (for logging errors)!
