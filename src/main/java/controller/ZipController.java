@@ -7,6 +7,14 @@ import java.util.LinkedHashSet;
 
 public class ZipController {
 
+    // TODO the zip controller to check the the condition for unzipping!
+
+    // TODO logger!!!
+
+    // TODO
+    // split the file name + path (last 2 index == txt file name test.txt) if this is equals the source folder last 2 index
+    // and the only txt in folder make the zip!!!
+
     IZipImpl zip = new IZipImpl();
     FileHandler fileHandler = new FileHandler();
 
