@@ -7,10 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ZipControllerTest {
 
-    String testPath1TxtMoreFiles = "C:\\Users\\Computer\\Documents\\Java\\Progmatic\\ZipProgHomeVersionGradle\\src\\test\\resources\\source_duplicated_txt_dir";
-    String testFileName = "test1.txt";
+    String testPath1TxtMoreFiles = "C:\\Users\\Computer\\Documents\\Java\\Progmatic\\ZipProgHomeVersionGradle\\src\\test\\resources\\test_source_duplicated_txt_dir";
+    String testFileName1 = "test1.txt";
     String testZipFilePath1 = "C:\\Users\\Computer\\Documents\\Java\\Progmatic\\ZipProgHomeVersionGradle\\src\\main\\resources\\source_zip_dir\\VadaszCsaba_01.zip";
     String testResultFolderUnsuccessful = "C:\\Users\\Computer\\Desktop\\unsuccessful";
+
+    String testMissingZipFileNameFromTxt = "C:\\Users\\Computer\\Documents\\Java\\Progmatic\\ZipProgHomeVersionGradle\\src\\test\\resources\\test_source_txt_dir";
+    String testFileName2 = "test.txt";
 
     ZipController zipController;
 
@@ -22,7 +25,7 @@ class ZipControllerTest {
     @Test
     void unzipFile() {
         assertFalse(zipController.exit);
-        assertFalse(zipController.unzipFile(testPath1TxtMoreFiles, testFileName, testZipFilePath1, testResultFolderUnsuccessful));
+        assertFalse(zipController.unzipFile(testPath1TxtMoreFiles, testFileName1, testZipFilePath1, testResultFolderUnsuccessful));
         assertTrue(zipController.exit);
     }
 }

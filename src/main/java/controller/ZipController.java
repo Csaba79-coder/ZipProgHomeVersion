@@ -4,6 +4,7 @@ import model.IZipImpl;
 import utils.FileHandler;
 
 import java.io.File;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 
@@ -31,6 +32,10 @@ public class ZipController {
                 for (int i = 0; i < tempList.size(); i++) {
                     if (tempList.contains(fileNameTxt)) {
                         zip.unzip(zipFilePath, destDirector);
+                    } else if  (!tempList.contains(fileNameTxt)) {
+                        // error message!!! LOG!
+                        exit = true;
+                        return false;
                     }
                 }
                 exit = true;
