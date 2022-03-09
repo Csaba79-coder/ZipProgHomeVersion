@@ -9,6 +9,8 @@ import java.util.Objects;
 
 public class ZipController {
 
+    boolean exit = false;
+
     // TODO the zip controller to check the the condition for unzipping!
 
     // TODO logger!!!
@@ -20,23 +22,27 @@ public class ZipController {
     IZipImpl zip = new IZipImpl();
     FileHandler fileHandler = new FileHandler();
 
-    public boolean unzipFile(String path, String fileName, String zipFilePath, String destDirector) {
+    public boolean unzipFile(String pathTxt, String fileNameTxt, String zipFilePath, String destDirector) {
 
-        if (Objects.requireNonNull(new File(path).listFiles()).length == 1) {
-            if (!zipFilePath.isEmpty() && !destDirector.isEmpty() && !path.isEmpty()) {
-                LinkedHashSet<String> tempList = fileHandler.readTxt(path);
+        if (Objects.requireNonNull(new File(pathTxt).listFiles()).length == 1) {
+            if (!zipFilePath.isEmpty() && !destDirector.isEmpty() && !pathTxt.isEmpty()) {
+                LinkedHashSet<String> tempList = fileHandler.readTxt(pathTxt);
 
                 for (int i = 0; i < tempList.size(); i++) {
-                    if (tempList.contains(fileName)) {
+                    if (tempList.contains(fileNameTxt)) {
                         zip.unzip(zipFilePath, destDirector);
                     }
-                    return true;
                 }
+                exit = true;
+                return true;
             } else {
+                // error message!!! LOG!
+                exit = true;
                 return false;
             }
-            return false;
         }
+        // error message!!! LOG!
+        exit = true;
         return false;
     }
 }
