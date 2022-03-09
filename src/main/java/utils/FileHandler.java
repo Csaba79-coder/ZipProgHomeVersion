@@ -36,12 +36,14 @@ public class FileHandler {
         } catch (IOException e) {
             e.printStackTrace();
 
-        } finally {
-            /* try {
+        /*} finally {
+            try {
                 bufferedReader.close();
+                fileReader.close();
             } catch (IOException e) {
                 e.printStackTrace();
-            }*/
+            }
+        */
         }
         return lineSet;
     }
