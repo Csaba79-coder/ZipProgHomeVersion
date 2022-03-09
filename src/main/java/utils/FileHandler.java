@@ -30,7 +30,7 @@ public class FileHandler {
             FileReader fileReader = new FileReader(path, StandardCharsets.UTF_8);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-            for (String line; (line = bufferedReader.readLine()) != null && !line.equals("");) {
+            for (String line; (line = bufferedReader.readLine()) != null  && !line.equals("");) {
                 lineSet.add(line);
             }
         } catch (IOException e) {

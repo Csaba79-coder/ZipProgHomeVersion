@@ -3,7 +3,9 @@ package controller;
 import model.IZipImpl;
 import utils.FileHandler;
 
+import java.io.File;
 import java.util.LinkedHashSet;
+import java.util.Objects;
 
 public class ZipController {
 
@@ -18,19 +20,23 @@ public class ZipController {
     IZipImpl zip = new IZipImpl();
     FileHandler fileHandler = new FileHandler();
 
-    public boolean unzipFile(String path, String zipFilePath, String destDirector) {
+    public boolean unzipFile(String path, String fileName, String zipFilePath, String destDirector) {
 
-        if (!zipFilePath.isEmpty() && !destDirector.isEmpty() && !path.isEmpty()) {
-            LinkedHashSet<String> tempList = fileHandler.readTxt(path);
-            for (int i = 0; i < tempList.size(); i++) {
-                if (tempList.contains(path)) {
-                    zip.unzip(zipFilePath, destDirector);
+        if (Objects.requireNonNull(new File(path).listFiles()).length == 1) {
+            if (!zipFilePath.isEmpty() && !destDirector.isEmpty() && !path.isEmpty()) {
+                LinkedHashSet<String> tempList = fileHandler.readTxt(path);
+
+                for (int i = 0; i < tempList.size(); i++) {
+                    if (tempList.contains(fileName)) {
+                        zip.unzip(zipFilePath, destDirector);
+                    }
+                    return true;
                 }
-                return true;
+            } else {
+                return false;
             }
-        } else {
             return false;
         }
-        return true;
+        return false;
     }
 }
