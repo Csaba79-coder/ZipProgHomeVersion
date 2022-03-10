@@ -11,6 +11,7 @@ public class UnZipApp {
             String zipDirectory = args[1];
             String targetDirectory = args[2];
             iZip.unzip(zipDirectory, targetDirectory);
+
         } else {
             new Processor().run();
         }
