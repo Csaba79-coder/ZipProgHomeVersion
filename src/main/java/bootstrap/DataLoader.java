@@ -43,7 +43,7 @@ public class DataLoader {
 
         System.out.println("Final Output");*/
 
-        String path = "C:\\Users\\Computer\\Documents\\Java\\Progmatic\\ZipProgHomeVersionGradle\\test-resources\\txt";
-        new ZipController().testFileNameAndPath(path);
+        // String path = "C:\\Users\\Computer\\Documents\\Java\\Progmatic\\ZipProgHomeVersionGradle\\test-resources\\txt";
+        // new ZipController().testFileNameAndPath(path);
     }
 }

@@ -14,18 +14,12 @@ public class ZipController {
 
     IZip zip = new IZipImpl();
     FileHandler fileHandler = new FileHandler();
-    String path;
 
+    public boolean unzipFile(String fileNameTxt, String txtFilePath,  String zipFilePath, String destDirector) {
 
-    public boolean unzipFile(String path, String zipFilePath, String destDirector) {
-
-        String fileNameTxt = getFolderPathAndFileName(path)[1];
-
-        LinkedHashSet<String> resultSet = fileHandler.readTxt(path);
-
-        if (Objects.requireNonNull(new File(path).listFiles()).length == 1) {
-            if (!zipFilePath.isEmpty() && !destDirector.isEmpty() && !path.isEmpty()) {
-                LinkedHashSet<String> tempList = fileHandler.readTxt(path);
+        if (Objects.requireNonNull(new File(txtFilePath).listFiles()).length == 1) {
+            if (!zipFilePath.isEmpty() && !destDirector.isEmpty() && !txtFilePath.isEmpty()) {
+                LinkedHashSet<String> tempList = fileHandler.readTxt(txtFilePath);
 
                 for (int i = 0; i < tempList.size(); i++) {
                     if (tempList.contains(fileNameTxt)) {
