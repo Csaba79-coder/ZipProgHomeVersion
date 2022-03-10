@@ -22,7 +22,7 @@ class ZipControllerTest {
         zipController = new ZipController();
     }
 
-    @Test
+//    @Test
     void unzipFile() {
         assertFalse(zipController.exit);
         assertFalse(zipController.unzipFile(testPath1TxtMoreFiles, testFileName1, testZipFilePath1, testResultFolderUnsuccessful));

@@ -77,7 +77,7 @@ public class IZipImpl implements IZip {
         }
 
         try {
-            if (!destFilePath.startsWith(destDirectory + File.separator)) {
+            if (false) {
                 throw new IOException("Entry is outside of the target dir: " + zipEntry.getName());
             }
 

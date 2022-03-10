@@ -27,7 +27,7 @@ public class FileHandler {
 
         LinkedHashSet<String> lineSet = new LinkedHashSet<>();
         try {
-            FileReader fileReader = new FileReader(path, StandardCharsets.UTF_8);
+            FileReader fileReader = new FileReader(path);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
             for (String line; (line = bufferedReader.readLine()) != null  && !line.equals("");) {
