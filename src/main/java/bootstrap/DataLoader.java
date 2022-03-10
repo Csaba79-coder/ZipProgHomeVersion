@@ -1,5 +1,6 @@
 package bootstrap;
 
+import controller.ZipController;
 import model.IZipImpl;
 import org.apache.log4j.Logger;
 import utils.FileHandler;
@@ -17,7 +18,7 @@ public class DataLoader {
     String zipFilePath2 = "C:\\Users\\Computer\\Documents\\Java\\Progmatic\\ZipProgHomeVersionGradle\\src\\main\\resources\\source_zip_dir\\TestWordUnzip.zip";
     String zipFilePath3 = "C:\\Users\\Computer\\Documents\\Java\\Progmatic\\ZipProgHomeVersionGradle\\src\\main\\resources\\source_zip_dir\\Karrierterv.zip";
 
-    Logger logger = Logger.getLogger(FileHandler.class);
+    public static final Logger LOGGER = Logger.getLogger(FileHandler.class);
 
     public void loadTestData() {
 
@@ -25,12 +26,14 @@ public class DataLoader {
         System.out.println(resultSet.size());
         print.printSet(resultSet);
 
-        String message = ": no file found";
+        // String message = ": no file found";
 
         boolean firstResult = zip.unzip(zipFilePath1, destDirectory);
         boolean secondResult = zip.unzip(zipFilePath2, destDirectory);
         boolean thirdResult = zip.unzip(zipFilePath3, destDirectory);
         boolean fourthResult = zip.unzip(zipFilePath3, "C:\\Users\\Computer\\Desktop\\proba");
+
+        // LOGGER.error("ERROR" + "-> reading file! Date: " + new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()));
 
         /*logger.error("ERROR" + message);
         logger.warn("WARNING");
@@ -39,5 +42,8 @@ public class DataLoader {
         logger.info("INFO");
 
         System.out.println("Final Output");*/
+
+        String path = "C:\\Users\\Computer\\Documents\\Java\\Progmatic\\ZipProgHomeVersionGradle\\test-resources\\txt";
+        new ZipController().testFileNameAndPath(path);
     }
 }

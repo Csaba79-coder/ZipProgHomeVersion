@@ -173,3 +173,7 @@
 [main] FATAL utils.FileHandler  - FATAL
 [main] DEBUG utils.FileHandler  - DEBUG
 [main] INFO  utils.FileHandler  - INFO
+[main] ERROR utils.FileHandler  - ERROR-> reading file! Date: 2022.03.10.10.38.23
+[main] ERROR utils.FileHandler  - ERROR-> reading file! Date: 2022.03.10.10.44.25
+[main] ERROR utils.FileHandler  - ERROR-> reading file! Date: 2022.03.10.10.44.55
+[main] ERROR utils.FileHandler  - ERROR-> reading file! Date: 2022.03.10.10.45.51

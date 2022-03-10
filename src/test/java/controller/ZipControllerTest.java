@@ -27,7 +27,7 @@ class ZipControllerTest {
     @Test
     void unzipFile() {
         assertFalse(zipController.exit);
-        assertFalse(zipController.unzipFile(testPath1TxtMoreFiles, testFileName1, testZipFilePath1, testResultFolderUnsuccessful));
+        assertFalse(zipController.unzipFile(testPath1TxtMoreFiles, testZipFilePath1, testResultFolderUnsuccessful));
         assertTrue(zipController.exit);
     }
 }

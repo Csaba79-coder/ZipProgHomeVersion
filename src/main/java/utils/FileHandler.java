@@ -5,11 +5,9 @@ import lombok.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedHashSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 @Getter
 @Setter
@@ -22,7 +20,6 @@ public class FileHandler {
     FileReader fileReader;
     BufferedReader bufferedReader;
 
-
     public LinkedHashSet<String> readTxt(String path) {
 
         LinkedHashSet<String> lineSet = new LinkedHashSet<>();
@@ -34,6 +31,8 @@ public class FileHandler {
                 lineSet.add(line);
             }
         } catch (IOException e) {
+
+            new Error("ERROR" + "-> reading file! Date: " + new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()));
             e.printStackTrace();
 
         /*} finally {
@@ -46,5 +45,11 @@ public class FileHandler {
         */
         }
         return lineSet;
+    }
+
+    private static class Error {
+
+        public Error(String s) {
+        }
     }
 }
