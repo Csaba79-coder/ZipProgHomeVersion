@@ -25,17 +25,19 @@ public class DataLoader {
         System.out.println(resultSet.size());
         print.printSet(resultSet);
 
+        String message = ": no file found";
+
         boolean firstResult = zip.unzip(zipFilePath1, destDirectory);
         boolean secondResult = zip.unzip(zipFilePath2, destDirectory);
         boolean thirdResult = zip.unzip(zipFilePath3, destDirectory);
         boolean fourthResult = zip.unzip(zipFilePath3, "C:\\Users\\Computer\\Desktop\\proba");
 
-        logger.error("ERROR");
+        /*logger.error("ERROR" + message);
         logger.warn("WARNING");
         logger.fatal("FATAL");
         logger.debug("DEBUG");
         logger.info("INFO");
 
-        System.out.println("Final Output");
+        System.out.println("Final Output");*/
     }
 }

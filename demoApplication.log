@@ -168,3 +168,8 @@
 [main] FATAL utils.FileHandler  - FATAL
 [main] DEBUG utils.FileHandler  - DEBUG
 [main] INFO  utils.FileHandler  - INFO
+[main] ERROR utils.FileHandler  - ERROR: no file found
+[main] WARN  utils.FileHandler  - WARNING
+[main] FATAL utils.FileHandler  - FATAL
+[main] DEBUG utils.FileHandler  - DEBUG
+[main] INFO  utils.FileHandler  - INFO

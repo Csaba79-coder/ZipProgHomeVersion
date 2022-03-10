@@ -1,6 +1,7 @@
 package utils;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.LinkedHashSet;
@@ -17,7 +18,8 @@ class FileHandlerTest {
         testSet = null;
     }
 
-//    @Test
+    @Disabled
+    @Test
     void readTxt() {
         assertNull(testSet);
         testSet = fileHandler.readTxt(new FileHandler().getPath());

@@ -1,6 +1,7 @@
 package controller;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,7 +23,8 @@ class ZipControllerTest {
         zipController = new ZipController();
     }
 
-//    @Test
+    @Disabled
+    @Test
     void unzipFile() {
         assertFalse(zipController.exit);
         assertFalse(zipController.unzipFile(testPath1TxtMoreFiles, testFileName1, testZipFilePath1, testResultFolderUnsuccessful));
